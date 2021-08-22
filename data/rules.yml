@@ -11,3 +11,8 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+#- rule: Temukan data DOSEN berdasarkan MATA KULIAH
+#  steps:
+#  - intent: dosen_by_mk
+#  - action: utter_dosen_by_mk

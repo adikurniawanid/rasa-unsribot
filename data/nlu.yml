@@ -16,10 +16,18 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - halo
+    - hallo
+    - hai
+    - hola
+    - selamat pagi
+    - selamat siang
+    - selamat sore
+    - selamat malam
+    - assalamualaikum
 
 - intent: goodbye
   examples: |
-    - good afternoon
     - cu
     - good by
     - cee you later
@@ -30,6 +38,9 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - terima kasih
+    - sampai jumpa
+    - makasih
 
 - intent: affirm
   examples: |
@@ -39,6 +50,12 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - ya
+    - benar
+    - betul
+    - bener
+    - yap
+    - yo
 
 - intent: deny
   examples: |
@@ -49,6 +66,13 @@ nlu:
     - don't like that
     - no way
     - not really
+    - nggak
+    - ngak
+    - tidak
+    - dak
+    - bukan
+    - salah
+    - tidak benar
 
 - intent: mood_great
   examples: |
@@ -83,6 +107,7 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+    - kecewa
 
 - intent: bot_challenge
   examples: |
@@ -90,3 +115,30 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - apakah kamu bot?
+    - ini bot ya?
+
+- intent: dosen_by_mk
+  examples: |
+    - carikan dosen yang mengajar mata kuliah kalkulus
+    - dosen yang mengajar kalkulus
+    - dosen kalkulus
+    - carikan dosen kalkulus
+
+- intent: tell_name
+  examples: |
+    - aku mau ngasih namaku
+    - aku mau nyampain nama aku
+
+- intent: repeat_name
+  examples: |
+    - siapa namaku?
+    - namaku siapa ya?
+    - siapa aku?
+
+- intent: give_name
+  examples: |
+    - adi
+    - kurniawan
+    - patrick
+    - kurnia

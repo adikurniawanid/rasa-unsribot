@@ -1,32 +1,60 @@
 version: "2.0"
 
 intents:
+  - greet
   - goodbye
   - affirm
   - deny
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - dosen_by_mk
+  - tell_name
+  - give_name
+  - repeat_name
+
+slots:
+  name:
+    type: text
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
+  - text: "Halo! Saya UNSRI BOT. Ada yang bisa dibantu?"
+  - text: "Halo! Kamu sedang terhubung dengan UNSRI BOT. Ada yang bisa dibantu?"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Terima kasih telah menggunakan UNSRI BOT. Jika ada pertanyaan lagi, silahkan hubungi UNSRI BOT kembali ya"
+  - text: "Terima kasih telah menggunakan UNSRI BOT. Senang telah membantu kamu"
+
+  utter_did_that_help:
+  - text: "Apakah jawaban tersebut membantu?"
+
+  utter_tanya_lagi:
+  - text: "Maaf ya kalau data tidak ditemukan. Mohon ulangi pertanyaanmu"
+  - text: "Maaf ya, UNSRI BOT bingung. Coba ulangi pertanyaanmu"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "UNSRI BOT merupakan bot yang dapat membantu kamu dalam menemukan informasi kegiatan akademik di UNSRI."
+
+  utter_dosen_by_mk:
+  - text: "Berikut adalah nama dari dosen yang mengajar matakuliah {mata_kuliah}"
+  - text: "SELECT {column} FROM {table} WHERE matakuliah LIKE %{mata_kuliah}%"
+
+  utter_ask_name:
+  - text: "siapa nama kamu?"
+
+actions:
+  - action_receive_name
+  - action_say_name
+
+#forms:
+#  dosen_by_mk:
+#    column:
+#      - type: from_text
+#    table:
+#      - type: from_text
+#    mata_kuliah:
+#      - type: from_text
 
 session_config:
   session_expiration_time: 60
