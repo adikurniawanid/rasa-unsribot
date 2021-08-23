@@ -2,6 +2,20 @@ version: "2.0"
 
 stories:
 
+- story: tanya instansi
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: tanya_instansi
+  - action: utter_ask_name
+  - intent: give_name
+  - action: action_receive_name
+  - action: utter_instansi
+  - action: utter_result
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_goodbye
+
 - story: mencari data dosen [membantu]
   steps:
   - intent: greet
@@ -38,30 +52,3 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_tanya_lagi
-
-#- story: happy path
-#  steps:
-#  - intent: greet
-#  - action: utter_greet
-#  - intent: mood_great
-#  - action: utter_happy
-#
-#- story: sad path 1
-#  steps:
-#  - intent: greet
-#  - action: utter_greet
-#  - intent: mood_unhappy
-#  - action: utter_cheer_up
-#  - action: utter_did_that_help
-#  - intent: affirm
-#  - action: utter_happy
-#
-#- story: sad path 2
-#  steps:
-#  - intent: greet
-#  - action: utter_greet
-#  - intent: mood_unhappy
-#  - action: utter_cheer_up
-#  - action: utter_did_that_help
-#  - intent: deny
-#  - action: utter_goodbye

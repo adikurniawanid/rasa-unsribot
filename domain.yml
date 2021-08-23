@@ -12,6 +12,7 @@ intents:
   - tell_name
   - give_name
   - repeat_name
+  - tanya_instansi
 
 slots:
   name:
@@ -31,17 +32,23 @@ responses:
 
   utter_tanya_lagi:
   - text: "Maaf ya kalau data tidak ditemukan. Mohon ulangi pertanyaanmu"
-  - text: "Maaf ya, UNSRI BOT bingung. Coba ulangi pertanyaanmu"
+  - text: "Maaf ya, UNSRI BOT bingung nih. Coba ulangi pertanyaanmu"
 
   utter_iamabot:
   - text: "UNSRI BOT merupakan bot yang dapat membantu kamu dalam menemukan informasi kegiatan akademik di UNSRI."
 
   utter_dosen_by_mk:
   - text: "Berikut adalah nama dari dosen yang mengajar matakuliah {mata_kuliah}"
-  - text: "SELECT {column} FROM {table} WHERE matakuliah LIKE %{mata_kuliah}%"
 
   utter_ask_name:
-  - text: "siapa nama kamu?"
+  - text: "Silahkan masukan nama?"
+  - text: "Siapa nama kamu?"
+
+  utter_instansi:
+  - text: "Baik, Mohon tunggu sebentar, akan saya cari terlebih dahulu."
+
+  utter_result:
+  - text: "Baik, instansi dari {name} adalah SELECT instansi FROM detail_user WHERE nama = {name} ."
 
 actions:
   - action_receive_name

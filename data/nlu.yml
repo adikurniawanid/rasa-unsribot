@@ -142,3 +142,10 @@ nlu:
     - kurniawan
     - patrick
     - kurnia
+
+- intent: tanya_instansi
+  examples: |
+    - aku mau cek instansi
+    - instansi dia apa
+    - kuliah dimana
+    - cek kampus
