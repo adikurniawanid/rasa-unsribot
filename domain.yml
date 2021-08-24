@@ -1,10 +1,14 @@
 version: "2.0"
 
+actions:
+  - aksi_set_nama
+  - aksi_get_nama
+
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
+  - salam
+  - sampai_jumpa
+  - setuju
+  - tidak_setuju
   - mood_great
   - mood_unhappy
   - bot_challenge
@@ -13,26 +17,42 @@ intents:
   - give_name
   - repeat_name
   - tanya_instansi
+  - terima_kasih
+  - cari_email_by_username
+#  - temukan
+
+entities:
+  - username
 
 slots:
-  name:
+  nama:
+    type: text
+  username:
+    type: text
+  column1:
+    type: text
+  column2:
+    type: text
+  column3:
     type: text
 
 responses:
-  utter_greet:
+  utter_salam:
   - text: "Halo! Saya UNSRI BOT. Ada yang bisa dibantu?"
   - text: "Halo! Kamu sedang terhubung dengan UNSRI BOT. Ada yang bisa dibantu?"
 
-  utter_goodbye:
-  - text: "Terima kasih telah menggunakan UNSRI BOT. Jika ada pertanyaan lagi, silahkan hubungi UNSRI BOT kembali ya"
+  utter_sampai_jumpa:
   - text: "Terima kasih telah menggunakan UNSRI BOT. Senang telah membantu kamu"
+
+  utter_terima_kasih:
+  - text: "Terima kasih telah menggunakan UNSRI BOT. Jika ada pertanyaan lagi, silahkan hubungi UNSRI BOT kembali ya"
 
   utter_did_that_help:
   - text: "Apakah jawaban tersebut membantu?"
 
   utter_tanya_lagi:
   - text: "Maaf ya kalau data tidak ditemukan. Mohon ulangi pertanyaanmu"
-  - text: "Maaf ya, UNSRI BOT bingung nih. Coba ulangi pertanyaanmu"
+  - text: "Maaf ya, UNSRI BOT bingung nih. Mohon ulangi pertanyaanmu"
 
   utter_iamabot:
   - text: "UNSRI BOT merupakan bot yang dapat membantu kamu dalam menemukan informasi kegiatan akademik di UNSRI."
@@ -45,23 +65,13 @@ responses:
   - text: "Siapa nama kamu?"
 
   utter_instansi:
-  - text: "Baik, Mohon tunggu sebentar, akan saya cari terlebih dahulu."
+  - text: "Baik, Mohon tunggu sebentar, akan saya temukan terlebih dahulu."
 
   utter_result:
-  - text: "Baik, instansi dari {name} adalah SELECT instansi FROM detail_user WHERE nama = {name} ."
+  - text: "Baik, instansi dari {nama} adalah SELECT instansi FROM detail_user WHERE nama = {nama} ."
 
-actions:
-  - action_receive_name
-  - action_say_name
-
-#forms:
-#  dosen_by_mk:
-#    column:
-#      - type: from_text
-#    table:
-#      - type: from_text
-#    mata_kuliah:
-#      - type: from_text
+  utter_email_by_username:
+  - text: "Baik, email dari {username} adalah 'SELECT email FROM detail_user WHERE username = %{username}%' ."
 
 session_config:
   session_expiration_time: 60

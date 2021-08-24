@@ -2,17 +2,17 @@ version: "2.0"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Say sampai jumpa kapanpun user bilang sampai jumpa
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - intent: sampai_jumpa
+  - action: utter_sampai_jumpa
 
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
 
-#- rule: Temukan data DOSEN berdasarkan MATA KULIAH
-#  steps:
-#  - intent: dosen_by_mk
-#  - action: utter_dosen_by_mk
+- rule: bilang terima_kasih kapanpun user bilang terima kasih
+  steps:
+  - intent: terima_kasih
+  - action: utter_terima_kasih

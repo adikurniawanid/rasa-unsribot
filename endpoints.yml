@@ -32,6 +32,13 @@ action_endpoint:
 #    username: <username used for authentication>
 #    password: <password used for authentication>
 
+#tracker_store:
+#    type: mysql
+#    url: localhost:3306
+#    db: akcat
+#    username: root
+#    password:
+
 # Event broker which all conversation events should be streamed to.
 # https://rasa.com/docs/rasa/event-brokers
 

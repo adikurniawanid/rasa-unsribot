@@ -1,7 +1,7 @@
 version: "2.0"
 
 nlu:
-- intent: greet
+- intent: salam
   examples: |
     - hey
     - hello
@@ -26,7 +26,7 @@ nlu:
     - selamat malam
     - assalamualaikum
 
-- intent: goodbye
+- intent: sampai_jumpa
   examples: |
     - cu
     - good by
@@ -38,11 +38,18 @@ nlu:
     - see you around
     - bye bye
     - see you later
-    - terima kasih
     - sampai jumpa
-    - makasih
 
-- intent: affirm
+- intent: terima_kasih
+  examples: |
+    - terima kasih
+    - makasih
+    - thank you
+    - thanks
+    - ty
+    - tyfi
+
+- intent: setuju
   examples: |
     - yes
     - y
@@ -57,7 +64,7 @@ nlu:
     - yap
     - yo
 
-- intent: deny
+- intent: tidak_setuju
   examples: |
     - no
     - n
@@ -73,41 +80,6 @@ nlu:
     - bukan
     - salah
     - tidak benar
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-    - kecewa
 
 - intent: bot_challenge
   examples: |
@@ -129,12 +101,15 @@ nlu:
   examples: |
     - aku mau ngasih namaku
     - aku mau nyampain nama aku
+    - tolong simpan nama ku
 
 - intent: repeat_name
   examples: |
-    - siapa namaku?
-    - namaku siapa ya?
+    - siapa nama aku?
+    - nama aku siapa ya?
     - siapa aku?
+    - namaku siapa?
+    - tahu namaku?
 
 - intent: give_name
   examples: |
@@ -149,3 +124,55 @@ nlu:
     - instansi dia apa
     - kuliah dimana
     - cek kampus
+
+- intent: cari_email_by_username
+  examples: |
+    - tolong cari email dengan username [akdev2101](username)
+    - temukan email dari username [adi_7777](username)
+    - cari email punyanya username [id21012000](username)
+    - cari email si username [adigegebeut](username)
+    - tau emailnya yang punya username [adikece19092](username)
+
+#- intent: temukan
+#  examples: |
+#    - cari [email](column1) punyanya username [id21012000](username)
+#    - cari [nama](column1) si username [adigegebeut](username)
+#    - tau [email](column1)nya yang punya username [adikece19092](username)
+#    - tolong cari [email](column1), dan [nama](column2) dengan username [akdev2101](username)
+#    - temukan [role_id](column1), [email](column2) dari username [adi_7777](username)
+
+
+#- intent: mood_great
+#  examples: |
+#    - perfect
+#    - great
+#    - amazing
+#    - feeling like a king
+#    - wonderful
+#    - I am feeling very good
+#    - I am great
+#    - I am amazing
+#    - I am going to save the world
+#    - super stoked
+#    - extremely good
+#    - so so perfect
+#    - so good
+#    - so perfect
+#
+#- intent: mood_unhappy
+#  examples: |
+#    - my day was horrible
+#    - I am sad
+#    - I don't feel very well
+#    - I am disappointed
+#    - super sad
+#    - I'm so sad
+#    - sad
+#    - very sad
+#    - unhappy
+#    - not good
+#    - not very good
+#    - extremly sad
+#    - so saad
+#    - so sad
+#    - kecewa
