@@ -5,3 +5,4 @@ entities : potongan informasi yang diekstrak dari pesan
 forms dan actions : tindakan untuk menambahkan logic aplikasi
 
 rasa run actions
+rasa data validate

@@ -17,28 +17,28 @@ stories:
 #  - intent: affirm
 #  - action: utter_goodbye
 
-#- story: mencari data dosen [membantu]
-#  steps:
-#  - intent: greet
-#  - action: utter_greet
-#  - intent: dosen_by_mk
-#  - action: utter_dosen_by_mk
-#  - action: utter_did_that_help
-#  - intent: affirm
-#  - action: utter_goodbye
-#
-#- story: mencari data dosen [gak membantu]
-#  steps:
-#  - intent: greet
-#  - action: utter_greet
-#  - intent: dosen_by_mk
-#  - action: utter_dosen_by_mk
-#  - action: utter_did_that_help
-#  - intent: deny
-#  - action: utter_tanya_lagi
-#  - intent: dosen_by_mk
-#  - action: utter_dosen_by_mk
-#  - action: utter_did_that_help
+- story: mencari data dosen [membantu]
+  steps:
+  - intent: salam
+  - action: utter_salam
+  - intent: dosen_by_mk
+  - action: utter_dosen_by_mk
+  - action: utter_did_that_help
+  - intent: setuju
+  - action: utter_sampai_jumpa
+
+- story: mencari data dosen [gak membantu]
+  steps:
+  - intent: salam
+  - action: utter_salam
+  - intent: dosen_by_mk
+  - action: utter_dosen_by_mk
+  - action: utter_did_that_help
+  - intent: tidak_setuju
+  - action: utter_tanya_lagi
+  - intent: dosen_by_mk
+  - action: utter_dosen_by_mk
+  - action: utter_did_that_help
 
 - story: simpan nama [sesuai]
   steps:
@@ -51,22 +51,22 @@ stories:
   - intent: repeat_name
   - action: aksi_get_nama
   - action: utter_did_that_help
-  - intent: setuju
+  - intent: tidak_setuju
   - action: utter_sampai_jumpa
 
-- story: simpan nama [gak sesuai]
-  steps:
-  - intent: salam
-  - action: utter_salam
-  - intent: tell_name
-  - action: utter_ask_name
-  - intent: give_name
-  - action: aksi_set_nama
-  - intent: repeat_name
-  - action: aksi_get_nama
-  - action: utter_did_that_help
-  - intent: tidak_setuju
-  - action: utter_tanya_lagi
+#- story: simpan nama [gak sesuai]
+#  steps:
+#  - intent: salam
+#  - action: utter_salam
+#  - intent: tell_name
+#  - action: utter_ask_name
+#  - intent: give_name
+#  - action: aksi_set_nama
+#  - intent: repeat_name
+#  - action: aksi_get_nama
+#  - action: utter_did_that_help
+#  - intent: tidak_setuju
+#  - action: utter_tanya_lagi
 
 - story: simpan username
   steps:
@@ -75,9 +75,36 @@ stories:
     - intent: cari_email_by_username
     - action: utter_email_by_username
 
-#- story: temukan
-#  steps:
-#    - intent: salam
-#    - action: utter_salam
-#    - intent: temukan
-#    - action: utter_temukan
+- story: temukan
+  steps:
+    - intent: salam
+    - action: utter_salam
+    - intent: temukan
+    - action: utter_temukan
+- story: interactive_story_1
+  steps:
+  - intent: salam
+  - action: utter_salam
+  - intent: temukan
+    entities:
+    - fields: email
+    - fields: nama
+    - username: akdev2101
+  - slot_was_set:
+    - username: akdev2101
+  - slot_was_set:
+    - fields:
+      - email
+      - nama
+  - action: utter_temukan
+  - intent: dosen_by_mk
+    entities:
+    - fields: dosen
+    - mata_kuliah: data mining
+  - slot_was_set:
+    - mata_kuliah: data mining
+  - slot_was_set:
+    - fields:
+      - dosen
+  - action: utter_dosen_by_mk
+  - action: utter_did_that_help

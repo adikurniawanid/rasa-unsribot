@@ -1,6 +1,9 @@
 version: "2.0"
-
 nlu:
+- intent: kasih_nim
+  examples: |
+    - nim saya adalah [09021181823168](nim)
+    - nimnya adakah [09021181823164](nim)
 - intent: salam
   examples: |
     - hey
@@ -25,7 +28,7 @@ nlu:
     - selamat sore
     - selamat malam
     - assalamualaikum
-
+    - halo halo hai
 - intent: sampai_jumpa
   examples: |
     - cu
@@ -39,7 +42,6 @@ nlu:
     - bye bye
     - see you later
     - sampai jumpa
-
 - intent: terima_kasih
   examples: |
     - terima kasih
@@ -48,7 +50,6 @@ nlu:
     - thanks
     - ty
     - tyfi
-
 - intent: setuju
   examples: |
     - yes
@@ -63,7 +64,6 @@ nlu:
     - bener
     - yap
     - yo
-
 - intent: tidak_setuju
   examples: |
     - no
@@ -80,7 +80,6 @@ nlu:
     - bukan
     - salah
     - tidak benar
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
@@ -89,20 +88,18 @@ nlu:
     - am I talking to a human?
     - apakah kamu bot?
     - ini bot ya?
-
 - intent: dosen_by_mk
   examples: |
-    - carikan dosen yang mengajar mata kuliah kalkulus
-    - dosen yang mengajar kalkulus
-    - dosen kalkulus
-    - carikan dosen kalkulus
-
+    - carikan dosen yang mengajar mata kuliah [kalkulus](mata_kuliah)
+    - dosen yang mengajar [kalkulus](mata_kuliah)
+    - dosen [alpro1](mata_kuliah)
+    - carikan dosen [basis data](mata_kuliah)
+    - tolong temukan [dosen](fields) yang mengajar mata kuliah [data mining](mata_kuliah)
 - intent: tell_name
   examples: |
     - aku mau ngasih namaku
     - aku mau nyampain nama aku
     - tolong simpan nama ku
-
 - intent: repeat_name
   examples: |
     - siapa nama aku?
@@ -110,69 +107,33 @@ nlu:
     - siapa aku?
     - namaku siapa?
     - tahu namaku?
-
 - intent: give_name
   examples: |
     - adi
     - kurniawan
     - patrick
     - kurnia
-
 - intent: tanya_instansi
   examples: |
     - aku mau cek instansi
     - instansi dia apa
     - kuliah dimana
     - cek kampus
-
 - intent: cari_email_by_username
   examples: |
     - tolong cari email dengan username [akdev2101](username)
     - temukan email dari username [adi_7777](username)
     - cari email punyanya username [id21012000](username)
     - cari email si username [adigegebeut](username)
-    - tau emailnya yang punya username [adikece19092](username)
-
-#- intent: temukan
-#  examples: |
-#    - cari [email](column1) punyanya username [id21012000](username)
-#    - cari [nama](column1) si username [adigegebeut](username)
-#    - tau [email](column1)nya yang punya username [adikece19092](username)
-#    - tolong cari [email](column1), dan [nama](column2) dengan username [akdev2101](username)
-#    - temukan [role_id](column1), [email](column2) dari username [adi_7777](username)
-
-
-#- intent: mood_great
-#  examples: |
-#    - perfect
-#    - great
-#    - amazing
-#    - feeling like a king
-#    - wonderful
-#    - I am feeling very good
-#    - I am great
-#    - I am amazing
-#    - I am going to save the world
-#    - super stoked
-#    - extremely good
-#    - so so perfect
-#    - so good
-#    - so perfect
-#
-#- intent: mood_unhappy
-#  examples: |
-#    - my day was horrible
-#    - I am sad
-#    - I don't feel very well
-#    - I am disappointed
-#    - super sad
-#    - I'm so sad
-#    - sad
-#    - very sad
-#    - unhappy
-#    - not good
-#    - not very good
-#    - extremly sad
-#    - so saad
-#    - so sad
-#    - kecewa
+    - tau email yang punya username [adikece19092](username) gak?
+- intent: temukan
+  examples: |
+    - cari [nama](fields) dari email [examples@mail.com](email)
+    - temukan [role_id](fields) dari user yang memiliki email [examples_21@gmail.com](email)
+    - carikan [email](fields) yang punya nim [09021181823168](nim)
+    - tolong cari [email](fields), dan [nama](fields) dengan username [akdev2101](username)
+    - temukan [role_id](fields), [email](fields) dari nim [09021297567364](nim)
+    - tolong temukan [email](fields), dan [nama](fields) dari username [akdev2101](username)
+- regex: nim
+  examples: |
+    - \d{14,14}

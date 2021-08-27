@@ -16,3 +16,8 @@ rules:
   steps:
   - intent: terima_kasih
   - action: utter_terima_kasih
+
+- rule: kasih_nim nya kapanpun user beri nim
+  steps:
+  - intent: kasih_nim
+  - action: utter_kasih_nim
