@@ -5,3 +5,6 @@
 /.idea/
 /catatan.txt
 /domainAwal.yml
+/Dockerfile
+/start_services.sh
+/story_graph.dot
