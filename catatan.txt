@@ -1,8 +1,0 @@
-responses : yang ingin di ucapkan chatbot ke user
-intents : kategori dari kata kata yang dibutuhkan untuk membalas
-slots : variabel yang disimpan selama percakapan
-entities : potongan informasi yang diekstrak dari pesan
-forms dan actions : tindakan untuk menambahkan logic aplikasi
-
-rasa run actions
-rasa data validate
